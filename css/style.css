@@ -44,14 +44,16 @@ section {
 h1 {
     font-size: 4rem;
     font-weight: 500;
+    color: var(--color-white);
 }
 
 h2 {
     font-size: 1.8rem;
+    color: var(--color-white);
 }
 
 p {
-    color: var(--color-dark-gray);
+    color: var(--color-white);
     font-size: 1rem;
     padding: 1rem 0;
 }
@@ -64,11 +66,16 @@ a {
     text-decoration: none;
 }
 
+li{
+    color: var(--color-white);
+}
+
 #subtitulo {
     color: var(--color-orange);
     font-size: .8rem;
     letter-spacing: 1px;
     font-weight: 500;
+    
 }
 
 
@@ -139,8 +146,14 @@ a {
 /* HEADER  */
 
 header {
+    position: relative;
     width: 100%;
-    margin: -2rem auto 0;
+    margin: 0 auto;
+}
+
+.navbar {
+    position: absolute;
+    top: 2rem;
 }
 
 .navigation {
@@ -201,6 +214,7 @@ header {
 /* PORTADA  */
 
 .portada {
+    padding-top: 7rem;
     width: var(--container-width-very-sm);
     margin: 0 auto;
     text-align: center;
@@ -249,58 +263,78 @@ header {
     color: var(--color-light-gray);
 }
 
-/* SERVICIOS  */
-.servicios {
-    width: 100%;
-    margin: 6rem 0;
-}
 
-.servicios_container {
+
+.categories__container{
     color: var(--color-white);
-    padding-left: 20%;
-}
-
-.servicios_text h1 {
-    padding-bottom: 3rem;
-}
-
-.servicio_item {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    width: var(--container-width-md);
+    margin: 0 auto;
+    display: flex;
     align-items: center;
-    padding: 3rem 0;
-    border-bottom: 1px solid var(--color-dark-gray);
-    border-top: 1px solid var(--color-dark-gray);
+}
+
+.categories__left{
+    padding-right: 4rem;
+    width: 40%;
+}
+
+.categories__left p{
+    padding: 1rem 0 3rem;
+}
+
+.categories__right{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    padding-left: 3rem;
+}
+
+.category{
+    background-image: url(../images/fondo3.png);
+    background-size: cover;
+    padding: 2rem;
+    border-radius: 2rem;
+    transition: 400ms all ease;
+}
+
+.category:hover{
+    box-shadow:0 3rem 3rem rgba(0, 0, 0, 0.4);
+    transition: 400ms all ease;
     z-index: 1;
 }
 
-.servicio_item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 120%;
-    width: 100%;
-    height: 100%;
-    background: url(../images/fondo5.png);
+.category__icon{
+    background: var(--color-primary);
+    padding: 0.7rem;
+    border-radius: 0.9rem;
+}
+
+.category h5{
+    margin: 2rem 0 1rem;
+    font-size: 1.1rem;
+}
+
+ .category p{
+    font-size: 1rem;
+ }
+
+/* SERVICIOS OFERTA  */
+
+.servicios_oferta{
+    background-image: url(../images/fondo6.png);
     background-size: cover;
-    background-position: center;
-    transition: var(--transition);
-    z-index: -3;
 }
 
-.servicio_item:hover::before {
-    right: 100%;
-    transform: translateX(100%);
+.servicios_oferta_container{
+    
+    padding: 5rem 0;
+    width: var(--container-width-md);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-
-
-.servicio_text h2 a {
-    color: var(--color-white);
-    font-weight: 500;
-    padding-right: 2rem;
-    cursor: pointer;
+.servicios_oferta_text ul li i{
+    color: var(--color-orange);
 }
 
 /* PROCESO  */
@@ -577,9 +611,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem 0;
     gap: 4rem;
 }
+
 .presupuesto_intro_txt h1 {
     flex: 0 0 55%;
 }
@@ -588,9 +622,6 @@ header {
     font-size: 1.3rem;
 }
 
-/* Form container styling */
-
-
 .formulario_container {
     width: var(--container-width-sm);
     margin: 0 auto;
@@ -598,7 +629,16 @@ header {
     color: #fff;
 }
 
-.formulario_container h2 {
+.formulario_container #subtitulo{
+    margin-bottom: -1rem;
+}
+
+.datos{
+    width: var(--container-width-md);
+    margin: 0 auto;
+}
+
+.datos h2 {
     text-align: left;
     color: #fff;
     margin: 1.5rem auto;
@@ -608,9 +648,7 @@ header {
 .datos_contacto {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Split into two columns */
     gap: 1rem;
-    /* Larger gap for more spacing */
 }
 
 .datos_contacto label {
@@ -637,18 +675,11 @@ input:focus {
     border: 1px solid var(--color-orange);
 }
 
-.presupuesto_section {
+.presupuesto {
     background-image: url(../images/fondo6.png);
     background-size: cover;
-    background-position: center;
 }
 
-.presupuesto {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-/* Servicio Section Grid */
 .presupuesto_container {
     width: var(--container-width-md);
     margin: 0 auto;
@@ -674,8 +705,7 @@ input:focus {
 .presupuesto_card {
     cursor: pointer;
     border-radius: 15px;
-    padding: 30px;
-    position: relative;
+    padding: 1.5rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     transition: var(--transition), box-shadow 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -690,6 +720,7 @@ input:focus {
     color: #fff;
     text-align: center;
     font-size: 1.8rem;
+    padding-bottom: 1rem;
 }
 
 .presupuesto_card ul li {
@@ -744,44 +775,31 @@ input:focus {
     color: var(--color-orange);
 }
 
-.extras {
+
+.extras{
     width: var(--container-width-sm);
-    margin: 20px auto 0;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 
 .extras h2 {
-    text-align: left;
     padding: 2rem 0 1rem;
 }
 
-.extras label {
-    color: #ddd;
-    margin: 15px 0;
+.extra_opciones{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    color: var(--color-white);
+}
+
+.extra_opcion label:hover{
     cursor: pointer;
-    display: block;
-}
-
-.plazo {
-    display: flex;
-    justify-content: flex-start;
-    /* Align elements to the start */
-    align-items: center;
-    /* Vertically center */
-    margin-top: 20px;
-}
-
-.plazo label {
-    cursor: default;
-    font-size: 1rem;
-    color: var(--color-light-gray);
-    margin-right: 10px;
-    /* Space between label and input */
 }
 
 .plazo input {
     padding: 8px;
     width: 50px;
-    /* Adjusted width */
     text-align: center;
     border: 1px solid var(--color-light-gray);
     border-radius: 5px;
@@ -791,9 +809,8 @@ input:focus {
 
 /* Presupuesto Final */
 .presupuesto_final {
-    padding: 30px;
-    border-radius: 10px;
     text-align: center;
+    color: var(--color-white);
 }
 
 .presupuesto_final p {
@@ -801,7 +818,7 @@ input:focus {
 }
 
 .presupuesto_final button {
-    margin: 1rem;
+    margin-top: 1rem;
 }
 
 
@@ -812,7 +829,154 @@ input:focus {
 }
 
 
+/* PAGINA SERVICIOS ____________ */
 
+.servicios_portada {
+    background-image: url(../images/fondo2.png);
+    background-size: cover;
+}
+
+.servicios_portada_container {
+    padding: 4rem 0 2rem;
+    width: var(--container-width-md);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.servicios_portada_titulo {
+    text-align: left;
+}
+
+.servicios_portada_titulo p {
+    padding-bottom: 2rem;
+}
+
+
+/* SERVICIOS VENTAJAS  */
+
+.servicios_ventajas {
+    background-image: url(../images/fondo3.png);
+    background-size: cover;
+}
+
+.servicios_ventajas_container {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+/* SERVICOS PASO  */
+
+.servicios_pasos {
+    background-image: url(../images/fondo6.png);
+    background-size: cover;
+}
+
+.servicios_pasos_container {
+    width: var(--container-width-md);
+    margin: 0 auto;
+}
+
+.servicios_pasos_titulo h1 {
+    padding-bottom: 1rem;
+}
+
+.servicios_pasos_items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+.paso h2 {
+    padding: 1rem;
+}
+
+.paso {
+    transition: var(--transition);
+}
+
+.paso:hover {
+    border: 1px solid var(--color-orange);
+}
+
+/* SERVICIOS  */
+.servicios {
+    width: 100%;
+    margin: 6rem 0;
+}
+
+.servicios_container {
+    color: var(--color-white);
+    padding-left: 20%;
+}
+
+.servicios_text h1 {
+    padding-bottom: 3rem;
+}
+
+.servicio_item {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--color-dark-gray);
+    border-top: 1px solid var(--color-dark-gray);
+    z-index: 1;
+}
+
+.servicio_item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 120%;
+    width: 100%;
+    height: 100%;
+    background: url(../images/fondo5.png);
+    background-size: cover;
+    background-position: center;
+    transition: var(--transition);
+    z-index: -3;
+}
+
+.servicio_item:hover::before {
+    right: 100%;
+    transform: translateX(100%);
+}
+
+
+
+.servicio_text h2 a {
+    color: var(--color-white);
+    font-weight: 500;
+    padding-right: 2rem;
+    cursor: pointer;
+}
+
+
+/* SERVICIOS CONCLUSION  */
+.servicios_conclusion{
+    background-image: url(../images/fondo7.png);
+    background-size: cover;
+}
+
+.servicios_conclusion_container{
+    width: var(--container-width-md);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.servicios_conclusion_container #subtitulo{
+    margin-bottom: -1rem;
+}
+.servicios_conclusion_text p{
+    margin: 1rem 0;
+}
 /* RESPONSIVE______________________________ */
 
 /* TABLETS----------- */
