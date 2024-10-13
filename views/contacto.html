@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- se utiliza para asegurar que las páginas web se rendericen correctamente en las versiones más recientes del navegador -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- ICONSOUT CDN -->
     <script src="https://kit.fontawesome.com/975a84afb8.js" crossorigin="anonymous"></script>
+
+    <!-- Leaflets link------ -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <!-- logo en miniatura -->
     <link rel="Icon" href="../images/logo.png">
@@ -19,32 +25,84 @@
 </head>
 
 <body>
-    <section class="main">
-        <!-- Aqui meto el header y otra sección juntos para que compartan el mismo fondo -->
-        <header class="navbar" id="navbar">
-            <nav class="navigation">
-                <div class="logo">
-                    <a href="index.html">DotNode.</a>
-                </div>
-                <div class="menu">
-                    <div class="menu_item"><a href="../index.html">Inicio</a></div>
-                    <div class="menu_item"><a href="servicios.html">Servicios</a></div>
-                    <div class="menu_item"><a href="proyectos.html">Proyectos</a></div>
-                    <div class="menu_item"><a href="precios.html">Precios</a></div>
-                </div>
-                <div class="navbutton">
-                    <a href="contacto.html"><button class="btn btn3"> Contacto </button></a>
-                </div>
-            </nav>
-        </header>
 
-        <section class="portada">
-            <p id="subtitulo">DESARROLLO WEB</p>
-            <h1>POTENCIA TU PROYECTO<span class="punto">.</span></h1>
-            <a href="views/servicios.html"><button class="btn btn2">Descubre Más</button></a>
-        </section>
 
+    <header class="navbar" id="navbar">
+        <nav class="navigation">
+            <div class="logo">
+                <a href="index.html">DotNode.</a>
+            </div>
+            <div class="menu">
+                <div class="menu_item"><a href="../index.html">Inicio</a></div>
+                <div class="menu_item"><a href="servicios.html">Servicios</a></div>
+                <div class="menu_item"><a href="proyectos.html">Proyectos</a></div>
+                <div class="menu_item"><a href="precios.html">Precios</a></div>
+            </div>
+            <div class="navbutton">
+                <a href="contacto.html"><button class="btn btn3"> Contacto </button></a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- INTRO___ -->
+    <section class="contacto_intro">
+        <div class="contacto_intro_container">
+            <h1>CONTÁCTANOS<span class="punto">.</span></h1>
+            <p>Si tienes preguntas, necesitas un presupuesto o simplemente deseas conocer más sobre nuestros
+                servicios,
+                no dudes en ponerte en contacto con nosotros.</p>
+        </div>
     </section>
+
+    <section class="contacto_info">
+        <div class="contacto_info_container">
+            <div class="contacto_text">
+                <h2>Ponte en contacto</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque placeat ad blanditiis, minus
+                    voluptates ipsum?</p>
+
+                <div class="contacto_datos">
+                    <div class="contacto_datos_icono">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contacto_datos_texto">
+                        <p><strong>Ubicación</strong></p>
+                        <p>Calle Dr. Severo Ochoa, 13, Centro, 18001 Granada, España </p>
+                    </div>
+                </div>
+                <div class="contacto_datos">
+                    <div class="contacto_datos_icono">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="contacto_datos_texto">
+                        <p><strong>Número de Teléfono</strong></p>
+                        <p>623 737 050</p>
+                    </div>
+                </div>
+                <div class="contacto_datos">
+                    <div class="contacto_datos_icono">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="contacto_datos_texto">
+                        <p><strong>Correo Electrónico</strong></p>
+                        <p>contact@dotnode.com</p>
+                    </div>
+                </div>
+                <div class="contacto_socials">
+                    <h3>Síguenos en nuestras redes:</h3>
+                    <ul>
+                        <li><a href="https://facebook.com"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://instagram.com"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://likedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+    </section>
+
 
 
 
@@ -61,10 +119,10 @@
             </div>
             <div class="footer_socials">
                 <ul>
-                    <li><a href="facebook.com"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="twitter.com"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="instagram.com"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="likedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://facebook.com"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://instagram.com"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://likedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
                 </ul>
             </div>
             <div class="footer_copyright">
@@ -76,9 +134,9 @@
 
 
 
+    <script src="../js/script.js"></script>
 
-
-    <script src="js/script.js"></script>
+    <script src="../js/map.js"></script>
 
 </body>
 
