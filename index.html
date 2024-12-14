@@ -20,21 +20,26 @@
 
 <body>
     <section class="main">
-        <!-- Aqui meto el header y otra sección juntos para que compartan el mismo fondo -->
+        <!-- Aqui meto el header y la seccion portada juntos para que compartan el mismo fondo -->
         <header class="navbar" id="navbar">
+
             <nav class="navigation">
                 <div class="logo">
                     <a href="index.html">DotNode.</a>
                 </div>
+                <input type="checkbox" id="check">
+                <label for="check" class="menu_icon"><i class="fa-solid fa-bars" id="abrir_icon"></i>
+                    <i class="fa-solid fa-x" id= "cerrar_icon"></i></label>
                 <div class="menu">
                     <div class="menu_item"><a href="index.html"><span class="active">Inicio</span></a></div>
                     <div class="menu_item"><a href="views/servicios.html">Servicios</a></div>
                     <div class="menu_item"><a href="views/proyectos.html">Proyectos</a></div>
                     <div class="menu_item"><a href="views/presupuesto.html">Precios</a></div>
+                    <div class="menu_item">
+                        <a href="views/contacto.html"><button class="btn"> Contacto </button></a>
+                    </div>
                 </div>
-                <div class="navbutton">
-                    <a href="views/contacto.html"><button class="btn"> Contacto </button></a>
-                </div>
+
             </nav>
         </header>
 
@@ -112,7 +117,7 @@
                 <p>Descubre nuestras categorías especializadas: desde webs interactivas y personalizadas hasta
                     plataformas eCommerce robustas. Cada categoría está diseñada para potenciar tu negocio con
                     soluciones únicas y estratégicas.</p>
-                <a href="#" class="btn btn4">Aprende más</a>
+                <a href="views/servicios.html" class="btn btn4">Aprende más</a>
             </div>
 
             <div class="categories__right">
@@ -283,14 +288,81 @@
                 <p>En DotNode nos gusta mantenernos siempre al tanto de las últimas noticias y tendencias del sector
                     para garantizar que tu proyecto se destaque en un mercado en constante evolución.</p>
             </div>
-            <div class="noticias_noticias">
-                <main></main>
+            <div class="noticias_grid">
+
+
+                <div class="article-card">
+                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/%C2%BFPor-que-es-importante-delegar-el-mantenimiento-de-tu-web_-Card.png"
+                        alt="¿Por qué es importante el mantenimiento de tu web?">
+                    <h3>¿Por qué es importante el mantenimiento de tu web?</h3>
+                    <p>06 NOV, 2024</p>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/Transforma-tu-PYME_-5-claves-para-un-diseno-web-efectivo-Card.png"
+                        alt="Transforma tu PYME: 5 claves para un diseño web efectivo">
+                    <h3>Transforma tu PYME: 5 claves para un diseño web efectivo</h3>
+                    <p>06 NOV, 2024</p>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/El-gran-debate_-Web-movil-responsive-design-o-app-Card.png"
+                        alt="El gran debate: Web móvil, diseño responsive o app">
+                    <h3>El gran debate: Web móvil, diseño responsive o app</h3>
+                    <p>23 OCT, 2024</p>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/La-importancia-del-logo-en-tu-web-Card.png"
+                        alt="La importancia del logo en tu web: Cómo hacer que tu marca brille">
+                    <h3>La importancia del logo en tu web: Cómo hacer que tu marca brille</h3>
+                    <p>23 OCT, 2024</p>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/Mas-alla-del-codigo_-las-diferencias-entre-diseno-y-desarrollo-Web-Card.png"
+                        alt="Más allá del código: las diferencias entre diseño y desarrollo Web">
+                    <h3>Más allá del código: las diferencias entre diseño y desarrollo Web</h3>
+                    <p>16 OCT, 2024</p>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/%C2%BFPor-que-la-seguridad-de-tu-sitio-web-es-clave-para-ganar-la-confianza-de-tus-clientes-Card.jpg"
+                        alt="¿Por qué la seguridad de tu sitio web es clave?">
+                    <h3>¿Por qué la seguridad de tu sitio web es clave?</h3>
+                    <p>04 OCT, 2024</p>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://www.kiwop.com/wp-content/uploads/2024/09/Transforma-la-web-Card.jpg"
+                        alt="Rediseño web efectivo en 10 pasos (sin morir en el intento)">
+                    <h3>Rediseño web efectivo en 10 pasos (sin morir en el intento)</h3>
+                    <p>23 SEP, 2024</p>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://www.kiwop.com/wp-content/uploads/2024/06/50.png"
+                        alt="Revolucionando el Comercio Electrónico con Headless Magento">
+                    <h3>Revolucionando el Comercio Electrónico con Headless Magento</h3>
+                    <p>28 JUN, 2024</p>
+                </div>
+            </div>
+            <div class="ver_mas">
+                <a href="https://www.idento.es/blog/desarrollo-web/" class="btn btn2">Ver más</a>
             </div>
         </div>
     </section>
 
 
 
+    <section class="conclusion_index">
+        <div class="conclusion_index_container">
+            <div class="conclusion_index_text">
+                <h1>CONQUISTA TU FUTURO</h1>
+                <a href="views/servicios.html"><button class="btn btn4">Saber Más</button></a>
+            </div>
+        </div>
+    </section>
 
 
 

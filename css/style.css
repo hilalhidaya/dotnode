@@ -16,7 +16,7 @@
     --color-dark-blue: #080911;
     --color-orange: #e15941;
     /* --color-orange: #9d4748; */
-    --color-light-gray: #979595;
+    --color-light-gray: #b7b4b4;
     --color-white: #fbfbf1;
     --color-dark-gray: #383838;
     --color-black: #0a0a0a;
@@ -27,10 +27,15 @@
     --transition: 400ms all ease;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--color-dark-blue);
     font-family: Montserrat, sans-serif;
     color: var(--color-black);
+    overflow-x: hidden;
 }
 
 img {
@@ -42,7 +47,7 @@ section {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 500;
     color: var(--color-white);
 }
@@ -54,7 +59,7 @@ h2 {
 
 p {
     color: var(--color-white);
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 1rem 0;
 }
 
@@ -157,6 +162,18 @@ header {
     margin: 0 auto;
 }
 
+#check {
+    display: none;
+}
+
+.menu_icon {
+    font-size: 1.8rem;
+    color: var(--color-white);
+    cursor: pointer;
+    right: 5%;
+    display: none;
+}
+
 .navbar {
     position: absolute;
     top: 2rem;
@@ -165,7 +182,7 @@ header {
 
 .navigation {
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     -moz-backdrop-filter: blur(10px);
     border-radius: 2rem;
@@ -182,7 +199,9 @@ header {
 .menu {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 2rem;
+    z-index: 300;
 }
 
 .menu_item {
@@ -347,7 +366,6 @@ header {
 }
 
 .servicios_oferta_container {
-
     padding: 5rem 0;
     width: var(--container-width-md);
     display: grid;
@@ -541,12 +559,12 @@ header {
 
 .noticias {
     width: 100%;
-    background-image: url(../images/fondo3.png);
-    background-size: cover;
+
 }
 
 .noticias_container {
-
+    width: var(--container-width-md);
+    margin: 0 auto;
     padding: 4rem 0;
 }
 
@@ -563,6 +581,66 @@ header {
 
 .noticias_txt h1 {
     line-height: 80%;
+}
+
+.ver_mas {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.noticias_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.article-card {
+    color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.article-card img {
+    width: 100%;
+    height: auto;
+}
+
+.article-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 0 15px;
+}
+
+.article-card p {
+    font-size: 14px;
+    color: #666;
+    padding: 0 15px 15px;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.conclusion_index {
+    background: url(../images/fondo.png);
+    background-size: cover;
+    max-width: 100%;
+}
+
+.conclusion_index_container {
+    width: var(--container-width-sm);
+    text-align: center;
+    margin: 0 auto;
+}
+
+.conclusion_index h1 {
+    padding: 4rem 0 2rem;
 }
 
 
@@ -632,23 +710,22 @@ header {
 }
 
 .presupuesto_intro_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: var(--container-width-md);
+    gap: 4rem;
     margin: 0 auto;
 }
 
 .presupuesto_intro_txt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
+    flex: 1 0 60%;
 }
 
-.presupuesto_intro_txt h1 {
-    flex: 0 0 55%;
-}
-
-.presupuesto_intro_txt p {
-    font-size: 1.3rem;
+.presupuesto_intro_img {
+    flex: 1 0 40%;
+    text-align: center;
 }
 
 .formulario_container {
@@ -725,6 +802,39 @@ input:focus {
     gap: 1rem;
 }
 
+.nuestros_servicios_container{
+    margin: 0 auto;
+}
+
+.nuestros_servicios_content{
+    width: var(--container-width-sm);
+    margin: 0 auto;
+}
+
+.nuestros_servicios_txt{
+    width: var(--container-width-md);
+    margin: 0 auto;
+}
+
+#ecommerce {
+    background: url(../images/fondo3.png); /* Amarillo */
+    background-size: cover;
+}
+
+#frontend {
+    background: url(../images/fondo8.png); /* Amarillo */
+    background-size: cover;
+}
+
+#app_moviles {
+    background: url(../images/fondo3.png); /* Amarillo */
+    background-size: cover;
+}
+
+#ui_ux{
+    background: url(../images/fondo8.png); /* Amarillo */
+    background-size: cover;
+}
 .presupuesto_card p {
     font-size: 1.5rem;
     text-align: center;
@@ -735,6 +845,7 @@ input:focus {
     cursor: pointer;
     border-radius: 15px;
     padding: 1.5rem;
+    transition: transform 0.3s ease-in-out;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     transition: var(--transition), box-shadow 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -859,6 +970,15 @@ input:focus {
     color: var(--color-orange);
     font-size: 2rem;
     font-weight: bold;
+}
+
+.dudas{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.dudas h2{
+    padding-bottom: 1rem;
 }
 
 
@@ -1013,10 +1133,7 @@ input:focus {
 /* PÁGINA PROYECTOS __________ */
 
 .galeria {
-    margin: 4rem 0 0;
-    padding: 4rem 0 0;
-    background-image: url(../images/fondo7.png);
-    background-size: cover;
+    margin: 8rem 0 0;
     position: relative;
 }
 
@@ -1070,7 +1187,7 @@ input:focus {
     top: 12%;
     width: 500px;
     max-width: 80%;
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
     z-index: 1;
 }
 
@@ -1080,8 +1197,12 @@ input:focus {
 }
 
 .slider .list .item .content h2 {
-    font-size: 100px;
+    font-size: 2rem;
     margin: 0;
+}
+
+.slider .list .item .content p {
+    font-size: 1.5rem;
 }
 
 .slider .list .item.active {
@@ -1141,7 +1262,7 @@ input:focus {
 
 .thumbnail {
     position: absolute;
-    bottom: 50px;
+    bottom: 35px;
     z-index: 11;
     display: flex;
     gap: 10px;
@@ -1210,8 +1331,8 @@ input:focus {
 .contacto_info_container {
     width: var(--container-width-sm);
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+   flex-direction: row;
     gap: 3rem;
 }
 
@@ -1229,7 +1350,7 @@ input:focus {
     padding: .2rem;
 }
 
-.contacto_datos_icono  i{
+.contacto_datos_icono i {
     width: 40px;
     height: 40px;
     background-color: var(--color-orange);
@@ -1268,12 +1389,13 @@ input:focus {
 
 #map {
     z-index: 1;
-    height: 100%;
+    width: 100%;
+    height: 400px;
     opacity: .7;
     transition: var(--transition);
 }
 
-#map:hover{
+#map:hover {
     opacity: 1;
 }
 
@@ -1295,9 +1417,10 @@ input:focus {
         --container-width-sm: 75%;
     }
 
-    .navbar {
-        visibility: hidden;
+    .navigation {
+        width: var(--container-width-md);
     }
+
 
     .portada h1 {
         font-size: 4rem;
@@ -1344,6 +1467,10 @@ input:focus {
         opacity: 1;
     }
 
+    .noticias_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     /* PAGINA DE SERVICIOS____ */
 
     .servicios_pasos_items {
@@ -1370,28 +1497,77 @@ input:focus {
 }
 
 /* Dispositivos pequeños (smartphones, menos de 768px) */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     :root {
         --container-width-sm: 90%;
         --container-width-very-sm: 95%;
     }
 
-    header {
-        padding: 0 1rem;
+    .menu_icon {
+        display: block;
+
+    }
+
+    .menu_icon #cerrar_icon {
+        display: none;
+    }
+
+    #check:checked~.menu_icon #abrir_icon {
+        display: none;
+    }
+
+    #check:checked~.menu_icon #cerrar_icon {
+        display: block;
     }
 
     .navigation {
-        visibility: hidden;
-        gap: 1rem;
-        padding: 5px;
+        background: url(../images/fondo4.png);
+        display: flex;
+        justify-content: space-between;
+        backdrop-filter: none;
     }
 
+    .sticky{
+        position: relative;
+    }
     .menu {
-        gap: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        display: block;
+        background: url(../images/fondo6.png);
+        overflow: hidden;
+        background-size: cover;
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    #check:checked~.menu {
+        max-height: 500px;
     }
 
     .menu_item {
-        font-size: 0.8rem;
+        padding: 1.5rem 0;
+        text-align: center;
+        transition: .3s ease;
+        font-size: 1.6rem;
+    }
+
+    .menu_item button {
+        font-size: 1.6rem;
+        background: none;
+        color: var(--color-light-gray);
+        padding: 0;
+    }
+
+
+    .menu_item button:hover {
+        border: none;
+    }
+
+    .menu_item:hover {
+        background: rgba(0, 0, 0, 0.1);
     }
 
     .portada {
@@ -1411,7 +1587,7 @@ input:focus {
         width: 80%;
     }
 
-    /* CATEGORÍAS - Centrar el texto en móviles */
+    /* CATEGORÍAS */
     .categories__container {
         flex-direction: column;
     }
@@ -1437,8 +1613,6 @@ input:focus {
         border-radius: 1rem;
     }
 
-
-    /* SERVICIOS OFERTA - Centrar el ancho */
     .servicios_oferta_container {
         width: var(--container-width-sm);
         margin: 0 auto;
@@ -1481,6 +1655,10 @@ input:focus {
 
     .proyecto_img img {
         opacity: 1;
+    }
+
+    .noticias_grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .footer_container {
@@ -1570,32 +1748,77 @@ input:focus {
         justify-content: start;
     }
 
+    .galeria_text h1{
+        font-size: 2.3rem;
+    }
+
     .slider .list .item .content h2 {
-        font-size: 60px;
+        font-size: 2rem;
+    }
+
+    .slider .list .item .content p {
+        font-size: 1.2rem;
     }
 
     .arrows {
-        top: 10%;
+        top: 40%;
     }
 
-    .slider {
-        margin-top: 20rem;
+    /* PAGINA PRECIOS  */
+    .presupuesto {
+        margin-top: 0;
+    }
+
+    .presupuesto_intro_container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .formulario_container, .nuestros_servicios_txt{
+        text-align: center;
+    }
+
+    .formulario_container .datos{
+        text-align: left;
+        padding-top: 1rem;
+    }
+
+    .presupuesto_cards{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nuestros_servicios_content h1{
+        font-size: 2rem;
     }
 
     /* PAGINA CONTACTO  */
-    
-    .contacto_datos{
+    .contacto_info_container{
+        flex-direction: column;
+    }
+    .contacto_datos {
+        margin: 0 auto;
         width: var(--container-width-lg);
     }
-    .contacto_text h2, .contacto_text p {
+
+    .contacto_text h2, .contacto_socials, .extras h2{
         text-align: center;
     }
-    .contacto_info_container{
-        grid-template-columns: repeat(1, 1fr);
+
+    .contacto_socials ul{
+        margin: 0 auto;
     }
 
-    .contacto_datos_texto{
+    .contacto_datos_texto {
         text-align: left;
+    }
+    .map{
+        height: 300px;
+    }
+
+    .dudas{
+        width: var(--container-width-md);
+        margin: 0 auto;
     }
 }
 
@@ -1642,5 +1865,9 @@ input:focus {
     .servicios_pasos_items {
         grid-template-columns: 1fr;
         /* 1 columna en móviles pequeños */
+    }
+
+    .noticias_grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

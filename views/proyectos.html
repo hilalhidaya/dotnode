@@ -21,19 +21,24 @@
 <body>
 
     <header class="navbar" id="navbar">
+
         <nav class="navigation">
             <div class="logo">
                 <a href="../index.html">DotNode.</a>
             </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="menu_icon"><i class="fa-solid fa-bars" id="abrir_icon"></i>
+                <i class="fa-solid fa-x" id="cerrar_icon"></i></label>
             <div class="menu">
                 <div class="menu_item"><a href="../index.html">Inicio</a></div>
                 <div class="menu_item"><a href="servicios.html">Servicios</a></div>
                 <div class="menu_item"><a href="proyectos.html"><span class="active">Proyectos</span></a></div>
                 <div class="menu_item"><a href="presupuesto.html">Precios</a></div>
+                <div class="menu_item">
+                    <a href="contacto.html"><button class="btn"> Contacto </button></a>
+                </div>
             </div>
-            <div class="navbutton">
-                <a href="contacto.html"><button class="btn"> Contacto </button></a>
-            </div>
+
         </nav>
     </header>
 
@@ -92,9 +97,10 @@
                 <div class="item">
                     <img src="../images/proyecto_galeria5.png" alt="">
                     <div class="content">
-                        <p>CLUB RESTAURANTE</p>
-                        <h1>LINEKERS GROUP</h1>
-                        <p>El sitio web destaca el bar Linekers en Puerto Banus, Marbella, conocido por su animada vida nocturna y música.</p>
+                        <p>CLUB</p>
+                        <h1>LINEKERS</h1>
+                        <p>El sitio web destaca el bar Linekers en Puerto Banus, Marbella, conocido por su animada vida
+                            nocturna y música.</p>
                         <a href="https://linekersgroup.com/" target="_blank"><button class="btn btn5">SITIO WEB <i
                                     class="fa-solid fa-link"></i></button></a>
                     </div>
@@ -139,6 +145,87 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="nuestros_servicios">
+        <div class="nuestros_servicios_container">
+            <div class="nuestros_servicios_txt">
+                <h1>NUESTROS SERVICIOS<span class="punto">.</span></h1>
+                <p>Ofrecemos soluciones digitales personalizadas para llevar tu negocio al siguiente nivel. Ya sea a través de un sitio web atractivo, una tienda en línea optimizada o una app móvil funcional, nos aseguramos de que tu marca se destaque y llegue de manera efectiva a tu audiencia. Trabajamos contigo para crear una presencia digital sólida, mejorando la experiencia de tus usuarios y maximizando tus resultados. ¡Vamos a transformar tu negocio juntos!</p>
+            </div>
+            <section class="nuestros_servicios_items">
+
+                <section class="nuestros_servicios_item" id="ecommerce">
+                    <div class="nuestros_servicios_content">
+                        <h1>E-commerce Sites</h1>
+                        <p>Creamos tiendas en línea diseñadas a medida para potenciar tu negocio en el entorno digital.
+                            Nuestro enfoque se centra en desarrollar plataformas funcionales y atractivas que no solo
+                            capturen la atención de los clientes, sino que también impulsen las ventas. Cada e-commerce
+                            que diseñamos está optimizado para la conversión, con navegación intuitiva, sistemas de pago
+                            seguros y características avanzadas como personalización de productos y filtros
+                            inteligentes. Nos aseguramos de que tu tienda destaque en los motores de búsqueda,
+                            ayudándote a conectar con una audiencia más amplia y a escalar tu negocio sin límites. Este
+                            servicio es ideal tanto para quienes están comenzando como para empresas que buscan renovar
+                            su presencia en línea.</p>
+                        <button class="btn btn4" onclick="location.href='../views/presupuesto.html'">Consultar
+                            Tarifa</button>
+                    </div>
+                </section>
+
+                <section class="nuestros_servicios_item" id="frontend">
+                    <div class="nuestros_servicios_content">
+                        <h1>Desarrollo FrontEnd</h1>
+                        <p>La primera impresión importa, y tu sitio web debe ser tan impresionante como funcional. Nos
+                            especializamos en el desarrollo front-end, creando interfaces atractivas y optimizadas que
+                            ofrecen una experiencia de usuario fluida y amigable. Nos aseguramos de que cada detalle,
+                            desde
+                            los colores y las fuentes hasta las animaciones y transiciones, esté alineado con tu marca.
+                            Diseñamos páginas que se adaptan perfectamente a cualquier dispositivo, garantizando un
+                            rendimiento impecable tanto en escritorio como en móviles. Con nosotros, tus ideas cobran
+                            vida
+                            en la pantalla, impactando a tus usuarios desde el primer momento.</p>
+                        <button class="btn btn4" onclick="location.href='../views/presupuesto.html'">Consultar
+                            Tarifa</button>
+                    </div>
+                </section>
+
+                <section class="nuestros_servicios_item" id="app_moviles">
+                    <div class="nuestros_servicios_content">
+                        <h1>Desarrollo de Aplicaciones Móviles</h1>
+                        <p>En un mundo donde los dispositivos móviles dominan, contar con una aplicación personalizada
+                            es
+                            clave para conectar con tus clientes. Diseñamos y desarrollamos apps para iOS y Android que
+                            destacan por su funcionalidad, diseño atractivo y rendimiento excepcional. Ya sea una
+                            aplicación
+                            comercial, una herramienta para tu equipo o un servicio innovador para tus clientes, nos
+                            encargamos de todo: desde la planificación estratégica hasta el lanzamiento en las tiendas
+                            de
+                            aplicaciones. Además, integramos características como notificaciones push, geolocalización y
+                            sistemas de pago, garantizando una experiencia completa y satisfactoria.</p>
+                        <button class="btn btn4" onclick="location.href='../views/presupuesto.html'">Consultar
+                            Tarifa</button>
+                    </div>
+                </section>
+
+                <section class="nuestros_servicios_item" id="ui_ux">
+                    <div class="nuestros_servicios_content">
+                        <h1>Diseño UI/UX</h1>
+                        <p>Tu sitio web o aplicación no solo debe verse bien, también debe ser fácil y agradable de
+                            usar.
+                            Nos especializamos en diseño UI/UX para crear experiencias digitales que conecten con los
+                            usuarios. Analizamos el comportamiento del cliente para diseñar interfaces intuitivas que
+                            guíen
+                            a los usuarios de manera natural hacia sus objetivos. Nuestros diseños están pensados para
+                            aumentar la retención, reducir las tasas de rebote y maximizar las conversiones, logrando un
+                            equilibrio perfecto entre estética y funcionalidad. Al elegirnos, obtienes un producto que
+                            no
+                            solo encanta a la vista, sino que también entrega resultados medibles.</p>
+                        <button class="btn btn4" onclick="location.href='../views/presupuesto.html'">Consultar
+                            Tarifa</button>
+                    </div>
+                </section>
+            </section>
         </div>
     </section>
 

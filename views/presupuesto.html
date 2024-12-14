@@ -22,19 +22,24 @@
     <section class="main">
         <!-- Aqui meto el header y otra sección juntos para que compartan el mismo fondo -->
         <header class="navbar" id="navbar">
+
             <nav class="navigation">
                 <div class="logo">
                     <a href="../index.html">DotNode.</a>
                 </div>
+                <input type="checkbox" id="check">
+                <label for="check" class="menu_icon"><i class="fa-solid fa-bars" id="abrir_icon"></i>
+                    <i class="fa-solid fa-x" id= "cerrar_icon"></i></label>
                 <div class="menu">
                     <div class="menu_item"><a href="../index.html">Inicio</a></div>
                     <div class="menu_item"><a href="servicios.html">Servicios</a></div>
                     <div class="menu_item"><a href="proyectos.html">Proyectos</a></div>
                     <div class="menu_item"><a href="presupuesto.html"><span class="active">Precios</span></a></div>
+                    <div class="menu_item">
+                        <a href="contacto.html"><button class="btn"> Contacto </button></a>
+                    </div>
                 </div>
-                <div class="navbutton">
-                    <a href="contacto.html"><button class="btn"> Contacto </button></a>
-                </div>
+
             </nav>
         </header>
 
@@ -57,9 +62,12 @@
                     intuitiva hasta un diseño
                     visual impactante, cada elemento está pensado para maximizar tu presencia en línea y convertir
                     visitantes en clientes.</h2>
+            </div>
+            <div class="presupuesto_intro_img">
                 <img src="../images/rectangulo.png" alt="rectangulo">
             </div>
-        </div>
+            </div>
+        </div>  
     </section>
 
     <section class="formulario">
@@ -189,6 +197,11 @@
                 </div>
             </section>
         </form>
+    </section>
+
+    <section class="dudas">
+        <h2>¿El presupuesto no se adapta a tu proyecto?</h2>
+       <button onclick="location.href='contacto.html#ponte_contacto'" class="btn btn">¡Pónte en Contacto!</button>
     </section>
 
 
