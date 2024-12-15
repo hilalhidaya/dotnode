@@ -9,6 +9,23 @@ function stickyNavbar() {
   }
 }
 
+// ANIMACIONES 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+          }
+      });
+  });
+
+  animatedElements.forEach(element => observer.observe(element));
+});
+
+
 // Validación de datos de contacto
 document.querySelector('form').addEventListener('submit', function(e) {
   e.preventDefault();

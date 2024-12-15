@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -29,37 +30,38 @@
                 </div>
                 <input type="checkbox" id="check">
                 <label for="check" class="menu_icon"><i class="fa-solid fa-bars" id="abrir_icon"></i>
-                    <i class="fa-solid fa-x" id= "cerrar_icon"></i></label>
+                    <i class="fa-solid fa-x" id="cerrar_icon"></i></label>
                 <div class="menu">
                     <div class="menu_item"><a href="index.html"><span class="active">Inicio</span></a></div>
                     <div class="menu_item"><a href="views/servicios.html">Servicios</a></div>
                     <div class="menu_item"><a href="views/proyectos.html">Proyectos</a></div>
                     <div class="menu_item"><a href="views/presupuesto.html">Precios</a></div>
                     <div class="menu_item">
-                        <a href="views/contacto.html"><button class="btn"> Contacto </button></a>
+                        <button class="btn" onclick="location.href='contacto.html'"> Contacto </button>
                     </div>
                 </div>
 
             </nav>
         </header>
 
-        <section class="portada">
-            <p id="subtitulo">DESARROLLO WEB</p>
-            <h1>POTENCIA TU PROYECTO<span class="punto">.</span></h1>
-            <a href="views/servicios.html"><button class="btn btn2">Descubre Más</button></a>
+        <section class="portada animate-on-scroll">
+            <p class="subtitulo">DESARROLLO WEB</p>
+            <h1 style="font-size: 5rem;">POTENCIA TU PROYECTO<span class="punto">.</span></h1>
+            <button class="btn btn2" onclick="location.href='views/servicios.html'">Descubre Más</button>
         </section>
 
     </section>
 
 
     <!-- OBJETIVOS_________________ -->
-    <div class="objetivos_container">
+    <div class="objetivos_container animate-on-scroll">
         <div class="para_ti_logo">
             <img src="images/logo.png" alt="logo dotnode">
         </div>
         <div class="para_ti_link">
-            <a href="views/contacto.html"><button class="btn3 btn"><i class="fa-solid fa-link"></i> Sobre
-                    Nosotros</button></a>
+            <button class="btn3 btn" onclick="location.href='views/contacto.html'"><i class="fa-solid fa-link"></i>
+                Sobre
+                Nosotros</button>
         </div>
         <h2>Creemos que la creación de sitios web debe ser accesible para todos.
             Ofrececemos soluciones de diseño de calidad sin los altos costos normalmente asociados.</h2>
@@ -68,17 +70,16 @@
             adaptarse a tus necesidades. Creamos diseños únicos y personalizados para posicionar tu marca y
             maximizar su potencial en línea.</p>
     </div>
-    </section>
 
     <!-- PROCESO  -->
 
     <section class="proceso">
         <div class="proceso_container">
-            <div class="proceso_text">
+            <div class="proceso_text animate-on-scroll">
                 <h1>Así Construimos Tu Sitio Web<span class="punto">.</span></h1>
 
             </div>
-            <div class="proceso_pasos">
+            <div class="proceso_pasos animate-on-scroll">
                 <div class="paso">
                     <h1>Exploración</h1>
                     <p>Lorem ipsum dolor sit, amet consectetur ad ipisicing elit. Iusto dignissimos corporis voluptate
@@ -110,9 +111,9 @@
 
     <!-- CATEGORIAS_________ -->
     <section class="categories">
-        <div class="container categories__container">
+        <div class="container categories__container ">
 
-            <div class="categories__left">
+            <div class="categories__left animate-on-scroll">
                 <h1>CATEGORÍAS<span class="punto">.</span></h1>
                 <p>Descubre nuestras categorías especializadas: desde webs interactivas y personalizadas hasta
                     plataformas eCommerce robustas. Cada categoría está diseñada para potenciar tu negocio con
@@ -120,7 +121,7 @@
                 <a href="views/servicios.html" class="btn btn4">Aprende más</a>
             </div>
 
-            <div class="categories__right">
+            <div class="categories__right animate-on-scroll">
 
                 <article class="category">
                     <a href="views/servicios.html">
@@ -169,10 +170,10 @@
 
     <section class="servicios_oferta">
         <div class="servicios_oferta_container">
-            <div class="servicios_oferta_img">
+            <div class="servicios_oferta_img animate-on-scroll ">
                 <img src="images/triangulo.png" alt="triangulo 3D">
             </div>
-            <div class="servicios_oferta_text">
+            <div class="servicios_oferta_text animate-on-scroll">
                 <h2>Destácate en el mundo digital con una empresa de desarrollo web de primera categoría.</h2>
                 <p>En Dotnode, ofrecemos todos los servicios de desarrollo web que necesitas para construir un producto
                     completo basado en la web, tales como:</p>
@@ -201,22 +202,22 @@
     <section class="proyectos">
         <div class="proyectos_container">
             <div class="proyectos_txt">
-                <div class="proyectos_titulo">
-                    <p id="subtitulo">NUESTRO TRABAJO</p>
+                <div class="proyectos_titulo animate-on-scroll">
+                    <p class="subtitulo">NUESTRO TRABAJO</p>
                     <h1>Diseños <span class="txt_color">100%</span> Personalizados<span class="circulo">.</span></h1>
                 </div>
                 <p>Cada proyecto que desarrollamos está hecho a medida, adaptado completamente a las necesidades y
                     visión de nuestros clientes. Aquí te mostramos algunos de nuestros trabajos anteriores, donde la
                     personalización y el detalle son nuestra firma.</p>
 
-                <button class="btn btn4">NUESTROS PROYECTOS</button>
+                <button class="btn btn4" onclick="location.href='views/proyectos.html'">NUESTROS PROYECTOS</button>
             </div>
             <div class="proyectos_elementos">
                 <div class="proyectos_elementos_izq">
-                    <div class="proyecto_elemento">
+                    <div class="proyecto_elemento animate-on-scroll">
                         <a href="views/proyectos.html">
-                            <div class="proyecto_img">
-                                <img src="images/proyecto4.png" alt="">
+                            <div class="proyecto_img ">
+                                <img src="images/proyecto4.png" alt="economia capital Democracy">
                             </div>
                             <div class="proyecto_elemento_txt">
                                 <h3>CAPITAL DEMOCRACY</h3>
@@ -224,10 +225,10 @@
                             </div>
                         </a>
                     </div>
-                    <div class="proyecto_elemento">
+                    <div class="proyecto_elemento animate-on-scroll">
                         <a href="views/proyectos.html">
                             <div class="proyecto_img">
-                                <img src="images/proyecto2_nightclub1.png" alt="">
+                                <img src="images/proyecto2_nightclub1.png" alt="club restaurant linekers">
                             </div>
                             <div class="proyecto_elemento_txt">
                                 <h3>LINEKERS GROUP</h3>
@@ -235,10 +236,10 @@
                             </div>
                         </a>
                     </div>
-                    <div class="proyecto_elemento">
+                    <div class="proyecto_elemento animate-on-scroll">
                         <a href="views/proyectos.html">
                             <div class="proyecto_img">
-                                <img src="images/proyecto3.png" alt="">
+                                <img src="images/proyecto3.png" alt="sitio web de chefs esenc">
                             </div>
                             <div class="proyecto_elemento_txt">
                                 <h3>ESENC</h3>
@@ -248,10 +249,10 @@
                     </div>
                 </div>
                 <div class="proyectos_elementos_der">
-                    <div class="proyecto_elemento">
+                    <div class="proyecto_elemento animate-on-scroll">
                         <a href="views/proyectos.html">
                             <div class="proyecto_img">
-                                <img src="images/proyecto1_chey.jpg" alt="">
+                                <img src="images/proyecto1_chey.jpg" alt="restaurante chey">
                             </div>
                             <div class="proyecto_elemento_txt">
                                 <h3>CHEY (BY TIBU)</h3>
@@ -259,10 +260,10 @@
                             </div>
                         </a>
                     </div>
-                    <div class="proyecto_elemento">
+                    <div class="proyecto_elemento animate-on-scroll">
                         <a href="views/proyectos.html">
                             <div class="proyecto_img">
-                                <img src="images/proyecto5_chimu.png" alt="">
+                                <img src="images/proyecto5_chimu.png" alt="club chimu">
                             </div>
                             <div class="proyecto_elemento_txt">
                                 <h3>CHIMU BANUS</h3>
@@ -282,8 +283,8 @@
     <!-- NOTICIAS_________________ -->
     <section class="noticias">
         <div class="noticias_container">
-            <div class="noticias_txt">
-                <p id="subtitulo">ÚLTIMAS NOTICIAS</p>
+            <div class="noticias_txt animate-on-scroll">
+                <p class="subtitulo">ÚLTIMAS NOTICIAS</p>
                 <h1>Nos Mantenemos Actualizados<span class="punto">.</span></h1>
                 <p>En DotNode nos gusta mantenernos siempre al tanto de las últimas noticias y tendencias del sector
                     para garantizar que tu proyecto se destaque en un mercado en constante evolución.</p>
@@ -291,56 +292,56 @@
             <div class="noticias_grid">
 
 
-                <div class="article-card">
+                <div class="article-card animate-on-scroll">
                     <img src="https://www.kiwop.com/wp-content/uploads/2024/10/%C2%BFPor-que-es-importante-delegar-el-mantenimiento-de-tu-web_-Card.png"
                         alt="¿Por qué es importante el mantenimiento de tu web?">
                     <h3>¿Por qué es importante el mantenimiento de tu web?</h3>
                     <p>06 NOV, 2024</p>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card animate-on-scroll">
                     <img src="https://www.kiwop.com/wp-content/uploads/2024/10/Transforma-tu-PYME_-5-claves-para-un-diseno-web-efectivo-Card.png"
                         alt="Transforma tu PYME: 5 claves para un diseño web efectivo">
                     <h3>Transforma tu PYME: 5 claves para un diseño web efectivo</h3>
                     <p>06 NOV, 2024</p>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card animate-on-scroll">
                     <img src="https://www.kiwop.com/wp-content/uploads/2024/10/El-gran-debate_-Web-movil-responsive-design-o-app-Card.png"
                         alt="El gran debate: Web móvil, diseño responsive o app">
                     <h3>El gran debate: Web móvil, diseño responsive o app</h3>
                     <p>23 OCT, 2024</p>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card animate-on-scroll">
                     <img src="https://www.kiwop.com/wp-content/uploads/2024/10/La-importancia-del-logo-en-tu-web-Card.png"
                         alt="La importancia del logo en tu web: Cómo hacer que tu marca brille">
                     <h3>La importancia del logo en tu web: Cómo hacer que tu marca brille</h3>
                     <p>23 OCT, 2024</p>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card animate-on-scroll">
                     <img src="https://www.kiwop.com/wp-content/uploads/2024/10/Mas-alla-del-codigo_-las-diferencias-entre-diseno-y-desarrollo-Web-Card.png"
                         alt="Más allá del código: las diferencias entre diseño y desarrollo Web">
                     <h3>Más allá del código: las diferencias entre diseño y desarrollo Web</h3>
                     <p>16 OCT, 2024</p>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card animate-on-scroll">
                     <img src="https://www.kiwop.com/wp-content/uploads/2024/10/%C2%BFPor-que-la-seguridad-de-tu-sitio-web-es-clave-para-ganar-la-confianza-de-tus-clientes-Card.jpg"
                         alt="¿Por qué la seguridad de tu sitio web es clave?">
                     <h3>¿Por qué la seguridad de tu sitio web es clave?</h3>
                     <p>04 OCT, 2024</p>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card animate-on-scroll">
                     <img src="https://www.kiwop.com/wp-content/uploads/2024/09/Transforma-la-web-Card.jpg"
                         alt="Rediseño web efectivo en 10 pasos (sin morir en el intento)">
                     <h3>Rediseño web efectivo en 10 pasos (sin morir en el intento)</h3>
                     <p>23 SEP, 2024</p>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card animate-on-scroll">
                     <img src="https://www.kiwop.com/wp-content/uploads/2024/06/50.png"
                         alt="Revolucionando el Comercio Electrónico con Headless Magento">
                     <h3>Revolucionando el Comercio Electrónico con Headless Magento</h3>
@@ -355,11 +356,11 @@
 
 
 
-    <section class="conclusion_index">
+    <section class="conclusion_index animate-on-scroll">
         <div class="conclusion_index_container">
             <div class="conclusion_index_text">
-                <h1>CONQUISTA TU FUTURO</h1>
-                <a href="views/servicios.html"><button class="btn btn4">Saber Más</button></a>
+                <h1>¡CONQUISTA TU FUTURO!</h1>
+                <button class="btn btn4" onclick="location.href='views/servicios.html'">Saber Más</button>
             </div>
         </div>
     </section>

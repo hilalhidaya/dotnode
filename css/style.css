@@ -15,7 +15,6 @@
     --color-blue: #0c8899;
     --color-dark-blue: #080911;
     --color-orange: #e15941;
-    /* --color-orange: #9d4748; */
     --color-light-gray: #b7b4b4;
     --color-white: #fbfbf1;
     --color-dark-gray: #383838;
@@ -75,7 +74,7 @@ li {
     color: var(--color-white);
 }
 
-#subtitulo {
+.subtitulo {
     color: var(--color-orange);
     font-size: .8rem;
     letter-spacing: 1px;
@@ -146,6 +145,17 @@ li {
     background-clip: text;
     color: transparent;
     font-size: 120%;
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* MAIN  */
@@ -248,22 +258,9 @@ header {
 
 .portada h1 {
     line-height: 95%;
-    font-size: 5rem;
-    color: var(--color-white);
     letter-spacing: -2px;
     padding-bottom: 2rem;
 }
-
-.portada h1,
-.portada p,
-.portada a,
-.para_ti_logo img {
-    transform: translateY(30px);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent .5s .7s ease-in-out 1 forwards;
-}
-
 
 /* PARA TI  */
 
@@ -490,6 +487,7 @@ header {
 
 .proyectos_titulo p {
     padding-bottom: 1rem;
+    color: var(--color-orange);
 }
 
 .proyectos_txt p {
@@ -521,7 +519,6 @@ header {
 .proyecto_elemento {
     margin-bottom: 2rem;
     transition: var(--transition);
-    box-shadow: rgba(249, 7, 7, 0.7);
 }
 
 .proyecto_elemento a {
@@ -735,7 +732,7 @@ header {
     color: #fff;
 }
 
-.formulario_container #subtitulo {
+.formulario_container .subtitulo {
     margin-bottom: -1rem;
 }
 
@@ -1121,7 +1118,7 @@ input:focus {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.servicios_conclusion_container #subtitulo {
+.servicios_conclusion_container .subtitulo {
     margin-bottom: -1rem;
 }
 
@@ -1302,6 +1299,10 @@ input:focus {
     inset: auto 10px 10px 10px;
 }
 
+
+.nuestros_servicios_item{
+    padding: 4rem 0;
+}
 /* PAGINA DE CONTACTO___  */
 
 .contacto_intro {

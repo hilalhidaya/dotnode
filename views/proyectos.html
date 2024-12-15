@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- se utiliza para asegurar que las páginas web se rendericen correctamente en las versiones más recientes del navegador -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- ICONSOUT CDN -->
@@ -35,7 +35,7 @@
                 <div class="menu_item"><a href="proyectos.html"><span class="active">Proyectos</span></a></div>
                 <div class="menu_item"><a href="presupuesto.html">Precios</a></div>
                 <div class="menu_item">
-                    <a href="contacto.html"><button class="btn"> Contacto </button></a>
+                    <button class="btn" onclick="location.href='contacto.html'"> Contacto </button>
                 </div>
             </div>
 
@@ -44,7 +44,7 @@
 
     <section class="galeria">
         <div class="galeria_text">
-            <p id="subtitulo">PORTAFOLIO</p>
+            <p class="subtitulo">PORTAFOLIO</p>
             <h1>NUESTRO TRABAJO<span class="punto">.</span></h1>
         </div>
         <div class="slider">
@@ -57,8 +57,8 @@
                         <p>Esenc ofrece servicios de chef privado y experiencias culinarias personalizadas en Marbella y
                             otras localidades como Saint Tropez, Mónaco y Londres.
                         </p>
-                        <a href="https://esenc.es/ " target="_blank"><button class="btn btn5">SITIO WEB <i
-                                    class="fa-solid fa-link"></i></button></a>
+                        <button class="btn btn5" onclick="window.open('https\://esenc.es/ ', '_blank')">SITIO WEB <i
+                                class="fa-solid fa-link"></i></button>
                     </div>
                 </div>
                 <div class="item">
@@ -68,8 +68,8 @@
                         <h1>CHEY</h1>
                         <p>Chey es un restaurante en Puerto Banús, Marbella, especializado en cocina nikkei, que fusiona
                             las tradiciones culinarias de Japón y Perú.</p>
-                        <a href="https://cheybytibu.com/" target="_blank"><button class="btn btn5">SITIO WEB <i
-                                    class="fa-solid fa-link"></i></button></a>
+                        <button class="btn btn5" onclick="window.open('https\://cheybytibu.com/', '_blank')">SITIO WEB
+                            <i class="fa-solid fa-link"></i></button>
                     </div>
                 </div>
                 <div class="item">
@@ -79,8 +79,8 @@
                         <h1>CAPITAL DEMOCRACY</h1>
                         <p>Capital Democracy se centra en una firma de asesoría que ayuda a startups a recaudar capital
                             de riesgo.</p>
-                        <a href="https://capitaldemocracy.com/" target="_blank"><button class="btn btn5">SITIO WEB <i
-                                    class="fa-solid fa-link"></i></button></a>
+                        <button class="btn btn5" onclick="window.open('https\://capitaldemocracy.com/', '_blank')">SITIO
+                            WEB <i class="fa-solid fa-link"></i></button>
                     </div>
                 </div>
                 <div class="item">
@@ -90,8 +90,9 @@
                         <h1>CHIMÚ</h1>
                         <p>Chimú se centra en un restaurante y lounge en Puerto Banús, Marbella, que ofrece una
                             experiencia gastronómica única con un enfoque en la fusión peruana y nikkei.</p>
-                        <a href="https://chimumarbella.com/ " target="_blank"><button class="btn btn5">SITIO WEB <i
-                                    class="fa-solid fa-link"></i></button></a>
+                        <button class="btn btn5" onclick="window.open('https\://chimumarbella.com/', '_blank')">SITIO
+                            WEB <i class="fa-solid fa-link"></i></button>
+
                     </div>
                 </div>
                 <div class="item">
@@ -101,45 +102,45 @@
                         <h1>LINEKERS</h1>
                         <p>El sitio web destaca el bar Linekers en Puerto Banus, Marbella, conocido por su animada vida
                             nocturna y música.</p>
-                        <a href="https://linekersgroup.com/" target="_blank"><button class="btn btn5">SITIO WEB <i
-                                    class="fa-solid fa-link"></i></button></a>
+                            <button class="btn btn5" onclick="window.open('https\://linekersgroup.com/', '_blank')">SITIO
+                                WEB <i class="fa-solid fa-link"></i></button>
                     </div>
                 </div>
             </div>
 
             <!-- button arrows -->
             <div class="arrows">
-                <button id="prev"><</button>
-                <button id="next">></button>
+                <button id="prev"> <i class="fa-solid fa-angle-left"></i> </button>
+                <button id="next"><i class="fa-solid fa-angle-right"></i></button>
             </div>
             <!-- thumbnail -->
             <div class="thumbnail">
                 <div class="item active">
-                    <img src="../images/proyecto3.png" alt="">
+                    <img src="../images/proyecto3.png" alt=" club escenc">
                     <div class="content">
                         ESCENC
                     </div>
                 </div>
                 <div class="item">
-                    <img src="../images/proyecto1_chey.jpg" alt="">
+                    <img src="../images/proyecto1_chey.jpg" alt="restaurante chey">
                     <div class="content">
                         CHEY
                     </div>
                 </div>
                 <div class="item">
-                    <img src="../images/proyecto4.png" alt="">
+                    <img src="../images/proyecto4.png" alt="economia capital democracy">
                     <div class="content">
                         CAPITAL DEMOCRACY
                     </div>
                 </div>
                 <div class="item">
-                    <img src="../images/proyecto5_chimu.png" alt="">
+                    <img src="../images/proyecto5_chimu.png" alt="chimu">
                     <div class="content">
                         CHIMÚ
                     </div>
                 </div>
                 <div class="item">
-                    <img src="../images/proyecto2_nightclub1.png">
+                    <img src="../images/proyecto2_nightclub1.png" alt="club nocturno linekers">
                     <div class="content">
                         LINEKERS GROUP
                     </div>
@@ -152,11 +153,15 @@
         <div class="nuestros_servicios_container">
             <div class="nuestros_servicios_txt">
                 <h1>NUESTROS SERVICIOS<span class="punto">.</span></h1>
-                <p>Ofrecemos soluciones digitales personalizadas para llevar tu negocio al siguiente nivel. Ya sea a través de un sitio web atractivo, una tienda en línea optimizada o una app móvil funcional, nos aseguramos de que tu marca se destaque y llegue de manera efectiva a tu audiencia. Trabajamos contigo para crear una presencia digital sólida, mejorando la experiencia de tus usuarios y maximizando tus resultados. ¡Vamos a transformar tu negocio juntos!</p>
+                <p>Ofrecemos soluciones digitales personalizadas para llevar tu negocio al siguiente nivel. Ya sea a
+                    través de un sitio web atractivo, una tienda en línea optimizada o una app móvil funcional, nos
+                    aseguramos de que tu marca se destaque y llegue de manera efectiva a tu audiencia. Trabajamos
+                    contigo para crear una presencia digital sólida, mejorando la experiencia de tus usuarios y
+                    maximizando tus resultados. ¡Vamos a transformar tu negocio juntos!</p>
             </div>
-            <section class="nuestros_servicios_items">
+            <div class="nuestros_servicios_items">
 
-                <section class="nuestros_servicios_item" id="ecommerce">
+                <div class="nuestros_servicios_item" id="ecommerce">
                     <div class="nuestros_servicios_content">
                         <h1>E-commerce Sites</h1>
                         <p>Creamos tiendas en línea diseñadas a medida para potenciar tu negocio en el entorno digital.
@@ -171,9 +176,9 @@
                         <button class="btn btn4" onclick="location.href='../views/presupuesto.html'">Consultar
                             Tarifa</button>
                     </div>
-                </section>
+                </div>
 
-                <section class="nuestros_servicios_item" id="frontend">
+                <div class="nuestros_servicios_item" id="frontend">
                     <div class="nuestros_servicios_content">
                         <h1>Desarrollo FrontEnd</h1>
                         <p>La primera impresión importa, y tu sitio web debe ser tan impresionante como funcional. Nos
@@ -188,9 +193,9 @@
                         <button class="btn btn4" onclick="location.href='../views/presupuesto.html'">Consultar
                             Tarifa</button>
                     </div>
-                </section>
+                </div>
 
-                <section class="nuestros_servicios_item" id="app_moviles">
+                <div class="nuestros_servicios_item" id="app_moviles">
                     <div class="nuestros_servicios_content">
                         <h1>Desarrollo de Aplicaciones Móviles</h1>
                         <p>En un mundo donde los dispositivos móviles dominan, contar con una aplicación personalizada
@@ -206,9 +211,9 @@
                         <button class="btn btn4" onclick="location.href='../views/presupuesto.html'">Consultar
                             Tarifa</button>
                     </div>
-                </section>
+                </div>
 
-                <section class="nuestros_servicios_item" id="ui_ux">
+                <div class="nuestros_servicios_item" id="ui_ux">
                     <div class="nuestros_servicios_content">
                         <h1>Diseño UI/UX</h1>
                         <p>Tu sitio web o aplicación no solo debe verse bien, también debe ser fácil y agradable de
@@ -224,8 +229,8 @@
                         <button class="btn btn4" onclick="location.href='../views/presupuesto.html'">Consultar
                             Tarifa</button>
                     </div>
-                </section>
-            </section>
+                </div>
+            </div>
         </div>
     </section>
 

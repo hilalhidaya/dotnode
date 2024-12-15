@@ -1,17 +1,17 @@
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- se utiliza para asegurar que las páginas web se rendericen correctamente en las versiones más recientes del navegador -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 
     <!-- ICONSOUT CDN -->
     <script src="https://kit.fontawesome.com/975a84afb8.js" crossorigin="anonymous"></script>
 
     <!-- logo en miniatura -->
-    <link rel="Icon" href="../images/logo.png">
+    <link rel="icon" href="../images/logo.png">
 
     <link rel="stylesheet" href="../css/style.css">
 
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <section class="main">
+    <div class="main">
         <!-- Aqui meto el header y otra sección juntos para que compartan el mismo fondo -->
         <header class="navbar" id="navbar">
 
@@ -36,7 +36,7 @@
                     <div class="menu_item"><a href="proyectos.html">Proyectos</a></div>
                     <div class="menu_item"><a href="presupuesto.html"><span class="active">Precios</span></a></div>
                     <div class="menu_item">
-                        <a href="contacto.html"><button class="btn"> Contacto </button></a>
+                        <button class="btn" onclick="location.href='contacto.html'"> Contacto </button>
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@
                 <img src="../images/logo.png" alt="logo dotnode">
             </div>
         </section>
-    </section>
+    </div>
 
     <section class="presupuesto_intro">
         <div class="presupuesto_intro_container">
@@ -66,7 +66,6 @@
             <div class="presupuesto_intro_img">
                 <img src="../images/rectangulo.png" alt="rectangulo">
             </div>
-            </div>
         </div>  
     </section>
 
@@ -74,7 +73,7 @@
 
         <form id="presupuestoForm">
             <div class="formulario_container">
-                <p id="subtitulo">HABLA CON NUESTROS ESPECIALISTAS</p>
+                <p class="subtitulo">HABLA CON NUESTROS ESPECIALISTAS</p>
                 <h1>Solicita tu Presupuesto<span class="punto">.</span></h1>
                 <div class="datos">
                     <h2>Datos de Contacto</h2>
@@ -191,10 +190,11 @@
 
                 <div class="presupuesto_final">
                     <p>Presupuesto Total: <span id="total">0</span>€</p>
-                    <input type="checkbox" id="acepto_condiciones"> <label for="condiciones">Acepto las condiciones
-                        de privacidad</label><br>
+                    <input type="checkbox" id="acepto_condiciones"> 
+                    <label for="acepto_condiciones">Acepto las condiciones de privacidad</label><br>
                     <button class="btn btn4" type="submit">Enviar</button>
                 </div>
+                
             </section>
         </form>
     </section>

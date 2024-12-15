@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -5,19 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    
     <!-- ICONSOUT CDN -->
     <script src="https://kit.fontawesome.com/975a84afb8.js" crossorigin="anonymous"></script>
 
-    <!-- Leaflets link------ -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
+    <!-- Leaflet link -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 
     <!-- logo en miniatura -->
-    <link rel="Icon" href="../images/logo.png">
+    <link rel="icon" href="../images/logo.png">
 
     <link rel="stylesheet" href="../css/style.css">
 
@@ -26,28 +24,28 @@
 
 <body>
 
-
     <header class="navbar" id="navbar">
-
         <nav class="navigation">
             <div class="logo">
                 <a href="../index.html">DotNode.</a>
             </div>
             <input type="checkbox" id="check">
-            <label for="check" class="menu_icon"><i class="fa-solid fa-bars" id="abrir_icon"></i>
-                <i class="fa-solid fa-x" id= "cerrar_icon"></i></label>
+            <label for="check" class="menu_icon">
+                <i class="fa-solid fa-bars" id="abrir_icon"></i>
+                <i class="fa-solid fa-x" id="cerrar_icon"></i>
+            </label>
             <div class="menu">
                 <div class="menu_item"><a href="../index.html">Inicio</a></div>
                 <div class="menu_item"><a href="servicios.html">Servicios</a></div>
                 <div class="menu_item"><a href="proyectos.html">Proyectos</a></div>
                 <div class="menu_item"><a href="presupuesto.html">Precios</a></div>
                 <div class="menu_item">
-                    <a href="views/contacto.html"><button class="btn"> Contacto </button></a>
+                    <button class="btn" onclick="location.href='contacto.html'"> Contacto </button>
                 </div>
             </div>
-
         </nav>
     </header>
+
 
 
     <!-- INTRO___ -->
@@ -64,7 +62,8 @@
         <div class="contacto_info_container">
             <div class="contacto_text">
                 <h2>Ponte en contacto</h2>
-                <p>Nuestro equipo de expertos atenderá tu solicitud con la mayor rapidez y eficacia, asegurándose de ofrecerte la mejor solución.</p>
+                <p>Nuestro equipo de expertos atenderá tu solicitud con la mayor rapidez y eficacia, asegurándose de
+                    ofrecerte la mejor solución.</p>
 
                 <div class="contacto_datos">
                     <div class="contacto_datos_icono">
@@ -106,10 +105,6 @@
             <div id="map"></div>
         </div>
     </section>
-
-
-
-
 
     <!-- FOOTER_________________ -->
 
