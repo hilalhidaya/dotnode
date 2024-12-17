@@ -1730,7 +1730,7 @@ input:focus {
         width: 80%;
     }
 
-    /* PROYECTOS - Centrar el texto en móviles */
+    /* PROYECTOS */
     .proyectos_container {
         flex-direction: column;
         text-align: center;
@@ -1967,7 +1967,6 @@ input:focus {
     /* PAGINA DE SERVICIOS___ */
     .servicios_pasos_items {
         grid-template-columns: 1fr;
-        /* 1 columna en móviles pequeños */
     }
 
     .noticias_grid {

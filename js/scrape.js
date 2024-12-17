@@ -12,7 +12,7 @@ async function fetchArticles() {
 
     // Esperar a que los artículos estén disponibles
     try {
-        await page.waitForSelector('.main-cardpost', { timeout: 120000 }); // Espera más tiempo (2 minutos)
+        await page.waitForSelector('.main-cardpost', { timeout: 120000 });
         console.log("Selector '.main-cardpost' encontrado");
     } catch (err) {
         console.log("Error esperando el selector de artículos:", err);
@@ -36,7 +36,7 @@ async function fetchArticles() {
     }
 
     // Esperar un momento para asegurar que las imágenes se carguen
-    await new Promise(resolve => setTimeout(resolve, 10000)); // Aumentamos la espera a 10 segundos
+    await new Promise(resolve => setTimeout(resolve, 10000)); 
 
     // Extraer los artículos
     let articles = [];
@@ -58,7 +58,7 @@ async function fetchArticles() {
                 }
 
                 // Capturar el enlace del artículo desde el enlace con clase 'main-posts__item'
-                const articleLinkElement = article.closest('a.main-posts__item'); // Usamos closest para encontrar el <a> más cercano
+                const articleLinkElement = article.closest('a.main-posts__item'); 
                 let articleLink = '';
                 if (articleLinkElement) {
                     articleLink = articleLinkElement.href;
@@ -89,7 +89,7 @@ async function fetchArticles() {
         return;
     }
 
-    // Corregir la ruta del archivo noticias.json
+    // Añadir la ruta del archivo noticias.json
     const jsonFilePath = path.join(__dirname, '..', 'noticias.json');
     try {
         fs.writeFileSync(jsonFilePath, JSON.stringify(articles, null, 2), 'utf8');

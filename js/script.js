@@ -1,3 +1,6 @@
+
+// Elimine el sticky en el responsive de móviles por fines estéticos
+
 window.onscroll = function () { stickyNavbar() };
 
 function stickyNavbar() {
@@ -9,7 +12,7 @@ function stickyNavbar() {
   }
 }
 
-// ANIMACIONES 
+// ANIMACION CON SCROLL 
 
 document.addEventListener('DOMContentLoaded', () => {
   const animatedElements = document.querySelectorAll('.animate-on-scroll');

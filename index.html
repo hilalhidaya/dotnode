@@ -80,6 +80,7 @@
 
             </div>
             <div class="proceso_pasos animate-on-scroll">
+                <!-- Los textos son de referencia  -->
                 <div class="paso">
                     <h1>Exploración</h1>
                     <p>Lorem ipsum dolor sit, amet consectetur ad ipisicing elit. Iusto dignissimos corporis voluptate
@@ -131,6 +132,8 @@
                             rápidos, responsivos y con una experiencia interactiva fluida.</p>
                     </a>
                 </article>
+
+                <!-- Aquí lo ideal seía quue cada link te lleve a una página específica que desgloce cada servicio pero eso haría el proyecto muy extenso -->
 
                 <article class="category">
                     <a href="views/servicios.html">
@@ -209,15 +212,18 @@
                 <p>Cada proyecto que desarrollamos está hecho a medida, adaptado completamente a las necesidades y
                     visión de nuestros clientes. Aquí te mostramos algunos de nuestros trabajos anteriores, donde la
                     personalización y el detalle son nuestra firma.</p>
-
                 <button class="btn btn4" onclick="location.href='views/proyectos.html'">NUESTROS PROYECTOS</button>
             </div>
+
+            <!-- Los proyectos mencionados a continuaciòn los extraje de una pequeña agencia de desarrollo web. Escogí los proyectos más destacados para la página. -->
+
             <div class="proyectos_elementos">
+                <!-- divido los proyectos en dos para que una sección quede ligeramente más arriba que otra creando un estilo de escalera -->
                 <div class="proyectos_elementos_izq">
                     <div class="proyecto_elemento animate-on-scroll">
                         <a href="views/proyectos.html">
                             <div class="proyecto_img ">
-                                <img src="images/proyecto4.png" alt="economia capital Democracy">
+                                <img src="images/proyecto4.png" alt="economia, capital Democracy">
                             </div>
                             <div class="proyecto_elemento_txt">
                                 <h3>CAPITAL DEMOCRACY</h3>
@@ -281,6 +287,13 @@
 
 
     <!-- NOTICIAS_________________ -->
+
+    <!-- Esta sección obtuve los artículos de noticias relacionados con el desarrollo web 
+    de manera automatizada tilizando Puppeteer para realizar scraping en una página web que publica artículos 
+    sobre desarrollo web.La información obtenida (títulos, descripciones, enlaces, fechas, etc.) la guardé 
+    en un archivo JSON local y este mismo después es cargado y procesado en esta sección, permitiendo mostrar las 
+    noticias dinámicamente en el contenedor correspondiente. -->
+
     <section class="noticias">
         <div class="noticias_container">
             <div class="noticias_txt animate-on-scroll">
@@ -290,16 +303,14 @@
                     para garantizar que tu proyecto se destaque en un mercado en constante evolución.</p>
             </div>
             <div class="noticias_grid">
-
+                <!-- Aquí se cargan las noticias  -->
             </div>
             <div class="noticias_button">
-            <button class="btn btn4" onclick="window.open('https\://www.kiwop.com/diseno-desarrollo-web')">Leer
-                más</button>
+                <button class="btn btn4" onclick="window.open('https\://www.kiwop.com/diseno-desarrollo-web')">Leer
+                    más</button>
             </div>
         </div>
     </section>
-
-
 
     <section class="conclusion_index animate-on-scroll">
         <div class="conclusion_index_container">
