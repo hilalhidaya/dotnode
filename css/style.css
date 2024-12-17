@@ -150,12 +150,42 @@ li {
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.6s ease-out, transform 0.8s ease-out;
 }
 
 .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@keyframes moverArribaAbajo {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px); 
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); 
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes moverDiagonal {
+    0%, 100% {
+        transform: translateY(0) translateX(0); /* Posición inicial */
+    }
+    50% {
+        transform: translateY(-10px) translateX(10px); /* Movimiento en diagonal */
+    }
 }
 
 /* MAIN  */
@@ -250,7 +280,7 @@ header {
 /* PORTADA  */
 
 .portada {
-    padding-top: 10rem;
+    padding-top: 6rem;
     width: var(--container-width-very-sm);
     margin: 0 auto;
     text-align: center;
@@ -260,6 +290,11 @@ header {
     line-height: 95%;
     letter-spacing: -2px;
     padding-bottom: 2rem;
+    padding-top: 7rem;
+}
+
+.portada_index h1{
+    padding-top: 0;
 }
 
 /* PARA TI  */
@@ -336,7 +371,7 @@ header {
 
 .category:hover {
     box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.4);
-    transition: 400ms all ease;
+    transform: scale(1.03);
     z-index: 1;
 }
 
@@ -367,6 +402,10 @@ header {
     width: var(--container-width-md);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+
+.triangulo_img{
+    animation: moverArribaAbajo 2s infinite ease-in-out;
 }
 
 .servicios_oferta_text ul li i {
@@ -406,11 +445,42 @@ header {
 .paso {
     position: relative;
     background: rgba(255, 255, 255, 0.05);
-    border: .2px solid rgb(170, 170, 170, 0.2);
+    
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(10px);
-    -moz-backdrop-filter: blur(10px);
     border-radius: 10px;
+    transition: border 0.3s ease-in-out;
+    animation: cambiarBorde 5s infinite;
+}
+
+/* Animación */
+@keyframes cambiarBorde {
+    0%, 100% {
+        border: 1px solid rgb(170, 170, 170, 0.2);
+    }
+    25% {
+        border: 1px solid var(--color-orange); 
+    }
+}
+
+/* Retrasos para cada elemento */
+.paso:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.paso:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.paso:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.paso:nth-child(4) {
+    animation-delay: 3s;
+}
+
+.paso:nth-child(5){
+    animation-delay: 4s;
 }
 
 .paso h1 {
@@ -563,6 +633,7 @@ header {
     width: var(--container-width-md);
     margin: 0 auto;
     padding: 4rem 0;
+    text-align: center;
 }
 
 .noticias_txt {
@@ -580,11 +651,6 @@ header {
     line-height: 80%;
 }
 
-.ver_mas {
-    text-align: center;
-    padding-top: 2rem;
-}
-
 .noticias_grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -600,6 +666,7 @@ header {
     overflow: hidden;
     transition: transform 0.3s ease;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .article-card img {
@@ -628,10 +695,6 @@ header {
     cursor: pointer;
 }
 
-.noticias_container button {
-    margin: 0 auto;
-}
-
 .conclusion_index {
     background: url(../images/fondo.png);
     background-size: cover;
@@ -647,7 +710,6 @@ header {
 .conclusion_index h1 {
     padding: 4rem 0 2rem;
 }
-
 
 /* FOOTER_________ */
 .footer {
@@ -731,6 +793,10 @@ header {
 .presupuesto_intro_img {
     flex: 1 0 40%;
     text-align: center;
+}
+
+.rectangulo{
+    animation: moverDiagonal 2s infinite ease-in-out;
 }
 
 .formulario_container {
@@ -1010,6 +1076,7 @@ input:focus {
 }
 
 .servicios_portada_titulo {
+    padding-top: 4rem;
     text-align: left;
 }
 
@@ -1017,6 +1084,9 @@ input:focus {
     padding-bottom: 2rem;
 }
 
+.forma3d{
+    animation: pulse 4s infinite;
+}
 /* SERVICIOS VENTAJAS  */
 
 .servicios_ventajas {
@@ -1137,6 +1207,10 @@ input:focus {
 
 .servicios_conclusion_text p {
     margin: 1rem 0;
+}
+
+.dona{
+    animation: moverArribaAbajo 2s infinite ease-in-out;
 }
 
 
@@ -1313,9 +1387,18 @@ input:focus {
 }
 
 
-.nuestros_servicios_item {
+.nuestros_servicios_content{
     padding: 4rem 0;
 }
+
+.nuestros_servicios_item {
+    padding: 2rem;
+}
+
+.nuestros_servicios_item p{
+    padding: 1rem 0;
+}
+
 
 /* PAGINA DE CONTACTO___  */
 
@@ -1421,7 +1504,7 @@ input:focus {
     }
 
     .portada h1 {
-        font-size: 6rem;
+        font-size: 5rem;
     }
 }
 
@@ -1499,7 +1582,6 @@ input:focus {
     .servicios_conclusion_text {
         text-align: center;
     }
-
     /* PAGINA DE GALERIA______ */
 
     .slider {
