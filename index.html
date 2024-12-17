@@ -353,9 +353,11 @@
 
 
     <script src="js/script.js"></script>
+
     <script>
+        // Intenté poner el código en un archivo externo pero si no pongo el código en el index no funciona
         // Cargar los artículos desde el archivo JSON 
-        fetch('noticias.json')
+        fetch('js/noticias.json')
             .then(response => response.json())
             .then(articles => {
                 const noticiasGrid = document.querySelector('.noticias_grid');

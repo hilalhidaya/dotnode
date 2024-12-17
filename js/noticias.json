@@ -2,41 +2,49 @@
   {
     "title": "¿Por qué es importante el mantenimiento de tu web?",
     "imageUrl": "https://www.kiwop.com/wp-content/uploads/2024/10/%C2%BFPor-que-es-importante-delegar-el-mantenimiento-de-tu-web_-Card.png",
-    "date": "06 NOV, 2024"
+    "date": "06 NOV, 2024",
+    "articleLink": "https://www.kiwop.com/blog/mantenimiento-web"
   },
   {
     "title": "Transforma tu PYME: 5 claves para un diseño web efectivo",
     "imageUrl": "https://www.kiwop.com/wp-content/uploads/2024/10/Transforma-tu-PYME_-5-claves-para-un-diseno-web-efectivo-Card.png",
-    "date": "06 NOV, 2024"
+    "date": "06 NOV, 2024",
+    "articleLink": "https://www.kiwop.com/blog/transforma-tu-pyme"
   },
   {
     "title": "El gran debate: Web móvil, diseño responsive o app",
     "imageUrl": "https://www.kiwop.com/wp-content/uploads/2024/10/El-gran-debate_-Web-movil-responsive-design-o-app-Card.png",
-    "date": "23 OCT, 2024"
+    "date": "23 OCT, 2024",
+    "articleLink": "https://www.kiwop.com/blog/web-responsive-pp"
   },
   {
     "title": "La importancia del logo en tu web: Cómo hacer que tu marca brille",
     "imageUrl": "https://www.kiwop.com/wp-content/uploads/2024/10/La-importancia-del-logo-en-tu-web-Card.png",
-    "date": "23 OCT, 2024"
+    "date": "23 OCT, 2024",
+    "articleLink": "https://www.kiwop.com/blog/logo-en-web"
   },
   {
     "title": "Más allá del código: las diferencias entre diseño y desarrollo Web",
     "imageUrl": "https://www.kiwop.com/wp-content/uploads/2024/10/Mas-alla-del-codigo_-las-diferencias-entre-diseno-y-desarrollo-Web-Card.png",
-    "date": "16 OCT, 2024"
+    "date": "16 OCT, 2024",
+    "articleLink": "https://www.kiwop.com/blog/diferencias-diseno-y-desarrollo-web"
   },
   {
     "title": "¿Por qué la seguridad de tu sitio web es clave?",
     "imageUrl": "https://www.kiwop.com/wp-content/uploads/2024/10/%C2%BFPor-que-la-seguridad-de-tu-sitio-web-es-clave-para-ganar-la-confianza-de-tus-clientes-Card.jpg",
-    "date": "04 OCT, 2024"
+    "date": "04 OCT, 2024",
+    "articleLink": "https://www.kiwop.com/blog/seguridad-sitio-web"
   },
   {
     "title": "Rediseño web efectivo en 10 pasos (sin morir en el intento)",
     "imageUrl": "https://www.kiwop.com/wp-content/uploads/2024/09/Transforma-la-web-Card.jpg",
-    "date": "23 SEP, 2024"
+    "date": "23 SEP, 2024",
+    "articleLink": "https://www.kiwop.com/blog/redisenos-sitio-web"
   },
   {
     "title": "Revolucionando el Comercio Electrónico con Headless Magento",
     "imageUrl": "https://www.kiwop.com/wp-content/uploads/2024/06/50.png",
-    "date": "28 JUN, 2024"
+    "date": "28 JUN, 2024",
+    "articleLink": "https://www.kiwop.com/blog/magento-cms-headless-comercio-electronico"
   }
 ]
