@@ -291,66 +291,9 @@
             </div>
             <div class="noticias_grid">
 
-
-                <div class="article-card animate-on-scroll">
-                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/%C2%BFPor-que-es-importante-delegar-el-mantenimiento-de-tu-web_-Card.png"
-                        alt="¿Por qué es importante el mantenimiento de tu web?">
-                    <h3>¿Por qué es importante el mantenimiento de tu web?</h3>
-                    <p>06 NOV, 2024</p>
-                </div>
-
-                <div class="article-card animate-on-scroll">
-                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/Transforma-tu-PYME_-5-claves-para-un-diseno-web-efectivo-Card.png"
-                        alt="Transforma tu PYME: 5 claves para un diseño web efectivo">
-                    <h3>Transforma tu PYME: 5 claves para un diseño web efectivo</h3>
-                    <p>06 NOV, 2024</p>
-                </div>
-
-                <div class="article-card animate-on-scroll">
-                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/El-gran-debate_-Web-movil-responsive-design-o-app-Card.png"
-                        alt="El gran debate: Web móvil, diseño responsive o app">
-                    <h3>El gran debate: Web móvil, diseño responsive o app</h3>
-                    <p>23 OCT, 2024</p>
-                </div>
-
-                <div class="article-card animate-on-scroll">
-                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/La-importancia-del-logo-en-tu-web-Card.png"
-                        alt="La importancia del logo en tu web: Cómo hacer que tu marca brille">
-                    <h3>La importancia del logo en tu web: Cómo hacer que tu marca brille</h3>
-                    <p>23 OCT, 2024</p>
-                </div>
-
-                <div class="article-card animate-on-scroll">
-                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/Mas-alla-del-codigo_-las-diferencias-entre-diseno-y-desarrollo-Web-Card.png"
-                        alt="Más allá del código: las diferencias entre diseño y desarrollo Web">
-                    <h3>Más allá del código: las diferencias entre diseño y desarrollo Web</h3>
-                    <p>16 OCT, 2024</p>
-                </div>
-
-                <div class="article-card animate-on-scroll">
-                    <img src="https://www.kiwop.com/wp-content/uploads/2024/10/%C2%BFPor-que-la-seguridad-de-tu-sitio-web-es-clave-para-ganar-la-confianza-de-tus-clientes-Card.jpg"
-                        alt="¿Por qué la seguridad de tu sitio web es clave?">
-                    <h3>¿Por qué la seguridad de tu sitio web es clave?</h3>
-                    <p>04 OCT, 2024</p>
-                </div>
-
-                <div class="article-card animate-on-scroll">
-                    <img src="https://www.kiwop.com/wp-content/uploads/2024/09/Transforma-la-web-Card.jpg"
-                        alt="Rediseño web efectivo en 10 pasos (sin morir en el intento)">
-                    <h3>Rediseño web efectivo en 10 pasos (sin morir en el intento)</h3>
-                    <p>23 SEP, 2024</p>
-                </div>
-
-                <div class="article-card animate-on-scroll">
-                    <img src="https://www.kiwop.com/wp-content/uploads/2024/06/50.png"
-                        alt="Revolucionando el Comercio Electrónico con Headless Magento">
-                    <h3>Revolucionando el Comercio Electrónico con Headless Magento</h3>
-                    <p>28 JUN, 2024</p>
-                </div>
             </div>
-            <div class="ver_mas">
-                <a href="https://www.idento.es/blog/desarrollo-web/" class="btn btn2">Ver más</a>
-            </div>
+            <button class="btn btn4" onclick="window.open('https\://www.kiwop.com/diseno-desarrollo-web')">Leer
+                más</button>
         </div>
     </section>
 
@@ -397,6 +340,46 @@
 
 
     <script src="js/script.js"></script>
+    <script>
+        // Cargar los artículos desde el archivo JSON 
+        fetch('noticias.json')
+            .then(response => response.json())
+            .then(articles => {
+                const noticiasGrid = document.querySelector('.noticias_grid');
+
+                // Crear los elementos del grid de noticias
+                articles.forEach(article => {
+                    const articleElement = document.createElement('div');
+                    articleElement.classList.add('article-card');
+
+                    // Crear el enlace del artículo
+                    const articleLink = document.createElement('a');
+                    articleLink.href = article.articleLink;  // Asignar el enlace
+                    articleLink.target = '_blank';  // Abrir en nueva pestaña
+
+                    const imgElement = document.createElement('img');
+                    imgElement.src = article.imageUrl;
+                    imgElement.alt = article.title;
+
+                    const titleElement = document.createElement('h3');
+                    titleElement.textContent = article.title;
+
+                    const dateElement = document.createElement('p');
+                    dateElement.textContent = article.date;
+
+                    // Agregar los elementos al contenedor del enlace
+                    articleLink.appendChild(imgElement);
+                    articleLink.appendChild(titleElement);
+                    articleLink.appendChild(dateElement);
+
+                    // Agregar el enlace al contenedor de noticias
+                    articleElement.appendChild(articleLink);
+                    noticiasGrid.appendChild(articleElement);
+                });
+            })
+            .catch(error => console.error('Error al cargar los artículos:', error));
+
+    </script>
 
 </body>
 

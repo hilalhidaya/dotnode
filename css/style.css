@@ -250,7 +250,7 @@ header {
 /* PORTADA  */
 
 .portada {
-    padding-top: 7rem;
+    padding-top: 10rem;
     width: var(--container-width-very-sm);
     margin: 0 auto;
     text-align: center;
@@ -613,6 +613,10 @@ header {
     padding: 0 15px;
 }
 
+.article-card a {
+    color: var(--color-white);
+}
+
 .article-card p {
     font-size: 14px;
     color: #666;
@@ -622,6 +626,10 @@ header {
 .article-card:hover {
     transform: translateY(-10px);
     cursor: pointer;
+}
+
+.noticias_container button {
+    margin: 0 auto;
 }
 
 .conclusion_index {
@@ -799,39 +807,44 @@ input:focus {
     gap: 1rem;
 }
 
-.nuestros_servicios_container{
+.nuestros_servicios_container {
     margin: 0 auto;
 }
 
-.nuestros_servicios_content{
+.nuestros_servicios_content {
     width: var(--container-width-sm);
     margin: 0 auto;
 }
 
-.nuestros_servicios_txt{
+.nuestros_servicios_txt {
     width: var(--container-width-md);
     margin: 0 auto;
 }
 
 #ecommerce {
-    background: url(../images/fondo3.png); /* Amarillo */
+    background: url(../images/fondo3.png);
+    /* Amarillo */
     background-size: cover;
 }
 
 #frontend {
-    background: url(../images/fondo8.png); /* Amarillo */
+    background: url(../images/fondo8.png);
+    /* Amarillo */
     background-size: cover;
 }
 
 #app_moviles {
-    background: url(../images/fondo3.png); /* Amarillo */
+    background: url(../images/fondo3.png);
+    /* Amarillo */
     background-size: cover;
 }
 
-#ui_ux{
-    background: url(../images/fondo8.png); /* Amarillo */
+#ui_ux {
+    background: url(../images/fondo8.png);
+    /* Amarillo */
     background-size: cover;
 }
+
 .presupuesto_card p {
     font-size: 1.5rem;
     text-align: center;
@@ -969,12 +982,12 @@ input:focus {
     font-weight: bold;
 }
 
-.dudas{
+.dudas {
     margin: 0 auto;
     text-align: center;
 }
 
-.dudas h2{
+.dudas h2 {
     padding-bottom: 1rem;
 }
 
@@ -1259,7 +1272,7 @@ input:focus {
 
 .thumbnail {
     position: absolute;
-    bottom: 35px;
+    bottom: 25px;
     z-index: 11;
     display: flex;
     gap: 10px;
@@ -1300,9 +1313,10 @@ input:focus {
 }
 
 
-.nuestros_servicios_item{
+.nuestros_servicios_item {
     padding: 4rem 0;
 }
+
 /* PAGINA DE CONTACTO___  */
 
 .contacto_intro {
@@ -1333,7 +1347,7 @@ input:focus {
     width: var(--container-width-sm);
     margin: 0 auto;
     display: flex;
-   flex-direction: row;
+    flex-direction: row;
     gap: 3rem;
 }
 
@@ -1528,9 +1542,10 @@ input:focus {
         backdrop-filter: none;
     }
 
-    .sticky{
+    .sticky {
         position: relative;
     }
+
     .menu {
         position: absolute;
         top: 100%;
@@ -1749,7 +1764,7 @@ input:focus {
         justify-content: start;
     }
 
-    .galeria_text h1{
+    .galeria_text h1 {
         font-size: 2.3rem;
     }
 
@@ -1775,49 +1790,54 @@ input:focus {
         text-align: center;
     }
 
-    .formulario_container, .nuestros_servicios_txt{
+    .formulario_container,
+    .nuestros_servicios_txt {
         text-align: center;
     }
 
-    .formulario_container .datos{
+    .formulario_container .datos {
         text-align: left;
         padding-top: 1rem;
     }
 
-    .presupuesto_cards{
+    .presupuesto_cards {
         display: flex;
         flex-direction: column;
     }
 
-    .nuestros_servicios_content h1{
+    .nuestros_servicios_content h1 {
         font-size: 2rem;
     }
 
     /* PAGINA CONTACTO  */
-    .contacto_info_container{
+    .contacto_info_container {
         flex-direction: column;
     }
+
     .contacto_datos {
         margin: 0 auto;
         width: var(--container-width-lg);
     }
 
-    .contacto_text h2, .contacto_socials, .extras h2{
+    .contacto_text h2,
+    .contacto_socials,
+    .extras h2 {
         text-align: center;
     }
 
-    .contacto_socials ul{
+    .contacto_socials ul {
         margin: 0 auto;
     }
 
     .contacto_datos_texto {
         text-align: left;
     }
-    .map{
+
+    .map {
         height: 300px;
     }
 
-    .dudas{
+    .dudas {
         width: var(--container-width-md);
         margin: 0 auto;
     }

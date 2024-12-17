@@ -11,98 +11,97 @@ async function fetchArticles() {
     console.log("Página cargada correctamente");
 
     // Esperar a que los artículos estén disponibles
-    await page.waitForSelector('.main-cardpost', { timeout: 60000 });
-    console.log("Selector '.main-cardpost' encontrado");
+    try {
+        await page.waitForSelector('.main-cardpost', { timeout: 120000 }); // Espera más tiempo (2 minutos)
+        console.log("Selector '.main-cardpost' encontrado");
+    } catch (err) {
+        console.log("Error esperando el selector de artículos:", err);
+        await browser.close();
+        return;
+    }
 
     // Forzar la carga de imágenes lazyload y manejar marcos separados
-    const lazyImages = await page.$$eval('img.lazyload', imgs => {
-        imgs.forEach(img => {
-            if (img.dataset.src) {
-                img.src = img.dataset.src;
-            }
-            img.classList.remove('lazyload');
+    try {
+        await page.$$eval('img.lazyload', imgs => {
+            imgs.forEach(img => {
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                }
+                img.classList.remove('lazyload');
+            });
         });
-    }).catch(err => console.log("Error forzando la carga de imágenes lazyload:", err));
-
-    console.log("Imágenes lazyload forzadas a cargar");
+        console.log("Imágenes lazyload forzadas a cargar");
+    } catch (err) {
+        console.log("Error forzando la carga de imágenes lazyload:", err);
+    }
 
     // Esperar un momento para asegurar que las imágenes se carguen
-    await new Promise(resolve => setTimeout(resolve, 5000));
+    await new Promise(resolve => setTimeout(resolve, 10000)); // Aumentamos la espera a 10 segundos
 
     // Extraer los artículos
-    const articles = await page.evaluate(() => {
-        const articleElements = document.querySelectorAll('.main-cardpost');
-        const articleData = [];
+    let articles = [];
+    try {
+        articles = await page.evaluate(() => {
+            const articleElements = document.querySelectorAll('.main-cardpost');
+            const articleData = [];
 
-        articleElements.forEach((article) => {
-            const title = article.querySelector('.main-cardpost__title') ? article.querySelector('.main-cardpost__title').innerText : 'No title';
-            const date = article.querySelector('.main-cardpost__date') ? article.querySelector('.main-cardpost__date').innerText : '';
-            const category = article.querySelector('.main-cardpost__tags') ? article.querySelector('.main-cardpost__tags').innerText.trim() : '';
+            articleElements.forEach((article) => {
+                const title = article.querySelector('.main-cardpost__title') ? article.querySelector('.main-cardpost__title').innerText : 'No title';
+                const date = article.querySelector('.main-cardpost__date') ? article.querySelector('.main-cardpost__date').innerText : '';
+                const category = article.querySelector('.main-cardpost__tags') ? article.querySelector('.main-cardpost__tags').innerText.trim() : '';
 
-            // Capturar la URL de la imagen manejando lazyload
-            let imageUrl = '';
-            const imgElement = article.querySelector('.main-cardpost__img img');
-            if (imgElement) {
-                imageUrl = imgElement.src || imgElement.dataset.src || imgElement.dataset.original;
-            }
-
-            // Filtrar artículos que contengan "desarrollo" en la categoría
-            if (category.toLowerCase().includes("desarrollo") && imageUrl && !imageUrl.includes('data:image/svg+xml')) {
-                // Evitar duplicados
-                if (!articleData.some(a => a.title === title)) {
-                    articleData.push({ title, imageUrl, date });
+                // Capturar la URL de la imagen manejando lazyload
+                let imageUrl = '';
+                const imgElement = article.querySelector('.main-cardpost__img img');
+                if (imgElement) {
+                    imageUrl = imgElement.src || imgElement.dataset.src || imgElement.dataset.original;
                 }
-            }
+
+                // Capturar el enlace del artículo desde el enlace con clase 'main-posts__item'
+                const articleLinkElement = article.closest('a.main-posts__item'); // Usamos closest para encontrar el <a> más cercano
+                let articleLink = '';
+                if (articleLinkElement) {
+                    articleLink = articleLinkElement.href;
+                }
+
+                // Imprimir el contenido del artículo para depurar
+                console.log("Artículo:", { title, date, category, articleLink });
+
+                // Filtrar artículos que contengan "desarrollo" en la categoría
+                if (category.toLowerCase().includes("desarrollo") && imageUrl && !imageUrl.includes('data:image/svg+xml') && articleLink) {
+                    if (!articleData.some(a => a.title === title)) {
+                        articleData.push({ title, imageUrl, date, articleLink });
+                    }
+                }
+            });
+
+            return articleData.slice(0, 8); // Limitamos a los primeros 8 artículos filtrados y con imagen
         });
+        console.log("Artículos extraídos:", articles);
+    } catch (err) {
+        console.log("Error extrayendo artículos:", err);
+    }
 
-        return articleData.slice(0, 8); // Limitamos a los primeros 8 artículos filtrados y con imagen
-    }).catch(err => console.log("Error extrayendo artículos:", err));
+    // Verificar si los artículos se han extraído correctamente
+    if (articles.length === 0) {
+        console.log("No se encontraron artículos, el archivo noticias.json no se actualizará.");
+        await browser.close();
+        return;
+    }
 
-    console.log("Artículos extraídos:", articles);
+    // Corregir la ruta del archivo noticias.json
+    const jsonFilePath = path.join(__dirname, '..', 'noticias.json');
+    try {
+        fs.writeFileSync(jsonFilePath, JSON.stringify(articles, null, 2), 'utf8');
+        console.log("Archivo noticias.json actualizado con los artículos");
+    } catch (err) {
+        console.log("Error escribiendo en el archivo noticias.json:", err);
+    }
 
     await browser.close().catch(err => console.log("Error cerrando el navegador:", err));
     return articles;
 }
 
-async function updateIndexPage() {
-    const articles = await fetchArticles().catch(err => console.log("Error obteniendo artículos:", err));
-    if (!articles) return; // Manejo si hay un error obteniendo los artículos
-
-    const indexPath = path.join(__dirname, '../index.html'); // Usando ruta relativa para facilitar la portabilidad
-    let html = fs.readFileSync(indexPath, 'utf8');
-
-    // Crear los elementos del grid de noticias
-    const newsGrid = articles.map((article) => {
-        return `
-            <div class="article-card">
-                <img src="${article.imageUrl}" alt="${article.title}">
-                <h3>${article.title}</h3>
-                <p>${article.date}</p>
-            </div>
-        `;
-    }).join('');
-
-    console.log("HTML generado para los artículos:", newsGrid);
-
-    // Buscar el contenedor '.noticias_grid' y agregar los nuevos artículos al final de los existentes
-    const noticiasGridStartIndex = html.indexOf('<div class="noticias_grid">');
-    const noticiasGridEndIndex = html.indexOf('</div>', noticiasGridStartIndex);
-    if (noticiasGridStartIndex === -1 || noticiasGridEndIndex === -1) {
-        console.error("No se encontró el contenedor '.noticias_grid' en el archivo HTML");
-        return;
-    }
-
-    // Insertar el nuevo contenido antes del cierre del contenedor
-    const updatedHtml = 
-        html.slice(0, noticiasGridEndIndex) + 
-        newsGrid + 
-        html.slice(noticiasGridEndIndex);
-
-    // Escribir los cambios en el archivo index.html
-    fs.writeFileSync(indexPath, updatedHtml, 'utf8');
-    console.log("El archivo index.html ha sido actualizado con los nuevos artículos");
-}
-
-updateIndexPage()
+fetchArticles()
     .then(() => console.log("Proceso completado con éxito"))
     .catch((err) => console.error("Se produjo un error:", err));
